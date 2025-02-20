@@ -88,7 +88,6 @@ nav a {
     text-decoration: none;
 }
 
-
 /* Style pour les écrans de téléphone (media query) */
 @media (max-width: 768px) {
     header nav ul {
@@ -97,11 +96,12 @@ nav a {
         position: fixed; /* Position fixe pour le menu mobile */
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100%; /* Occuper toute la largeur */
+        max-height: 50%; /* Hauteur maximale (ajuster si nécessaire) */
         background-color: #000;
         align-items: center;
         justify-content: center;
+        overflow-y: auto; /* Pour ajouter une barre de défilement si le menu est trop long */
     }
 
     nav.active ul {
@@ -112,9 +112,15 @@ nav a {
         margin: 10px 0; /* Marge verticale pour les éléments de la liste */
     }
 
+    nav a { /* Style des liens dans le menu mobile */
+        font-size: 1.2em; /* Ajuster la taille de la police */
+        padding: 10px; /* Ajuster l'espacement autour du texte */
+    }
+
     .hamburger {
         display: block; /* Afficher le bouton hamburger */
         cursor: pointer; /* Style de curseur au survol */
+        margin-top: 10px; /* Espacement au-dessus du hamburger */
     }
 
     /* Style du hamburger actif (croix) */
@@ -132,7 +138,7 @@ nav a {
 }
 
 
-/* ... (Reste de votre code CSS inchangé) */
+/* ... (Le code CSS que nous avons déjà travaillé) ... */
 
 /* Vidéo d'annonce */
 .video-annonce {
@@ -140,8 +146,6 @@ nav a {
     max-height: 500px;
     object-fit: cover;
 }
-
-/* ... (Reste de votre code CSS inchangé) */
 
 /* Section Accueil */
 #accueil {
@@ -243,6 +247,8 @@ nav a {
 #logiciels .logos-logiciels img:hover {
     transform: scale(1.1);
 }
+
+/* ... (Le code CSS pour le menu mobile et le header) ... */
 
 /* Section Services */
 #services {
@@ -448,38 +454,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-    /* Styles pour les mobiles */
-    .hamburger {
-        display: block;
-    }
-
-    header .container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        display: none;
-    }
-
-    #accueil h1 {
-        font-size: 2rem;
-    }
-
-    #accueil h2 {
-        font-size: 1rem;
-    }
-
-    #portfolio .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    #services .service {
-        width: 100%;
-    }
-
-    #contact .contenu-contact {
-        grid-template-columns: 1fr;
-    }
+    /* Styles pour les mobiles (déjà inclus dans la réponse précédente) */
+    /* ... */
 }
