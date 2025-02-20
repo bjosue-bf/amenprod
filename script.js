@@ -31,13 +31,17 @@ function basculerVisibilite(element) {
     }
 }
 
-// Fonction pour gérer l'affichage/masquage du menu sur mobile
-const hamburger = document.querySelector(".hamburger");
-const menu = document.querySelector(".menu");
+<script>
+    // Sélectionner le bouton hamburger et le menu
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('header nav');
 
-hamburger.addEventListener("click", () => {
-    menu.classList.toggle("show");
-});
+    // Ajouter un événement de clic sur le bouton hamburger
+    hamburger.addEventListener('click', () => {
+        // Ajouter ou retirer la classe 'active' sur le menu
+        nav.classList.toggle('active');
+    });
+</script>
 
 // Fonction pour gérer l'affichage des avis clients (si nécessaire)
 // ...
