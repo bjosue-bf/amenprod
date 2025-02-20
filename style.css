@@ -88,6 +88,27 @@ nav ul li {
     margin-left: 20px;
 }
 
+nav a {
+    color: #fff; /* Changer la couleur des liens en blanc */
+    text-decoration: none;
+}
+
+/* Lors de l'affichage du menu */
+nav.active ul {
+    display: flex; /* Afficher le menu */
+    background-color: #000; /* Fond noir quand le menu est activé */
+    position: absolute; /* Positionner le menu en mode flottant */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Menu prend toute la largeur et hauteur */
+    flex-direction: column; /* Organiser les éléments en colonne */
+    align-items: center; /* Centrer les éléments */
+    justify-content: center; /* Centrer verticalement les éléments */
+    padding: 20px 0; /* Espacement autour des éléments */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ombre pour le menu */
+}
+
 @media (max-width: 768px) {
     /* Masquer le menu par défaut sur les petits écrans */
     nav ul {
