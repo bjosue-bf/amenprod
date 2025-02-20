@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <meta name="keywords" content="AMEN PROD, montage vidéo, Ouagadougou, Burkina Faso, clips musicaux, courts métrages, publicités, Première Pro, After Effects, Capcut Pro, Canva Pro">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -15,38 +17,34 @@
                 <img src="logo.png" alt="Logo AMEN PROD">
             </div>
             <nav>
-                <ul class="menu">
+                <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#a-propos">À propos</a></li>
                     <li><a href="#portfolio">Mes réalisations</a></li>
                     <li><a href="#logiciels">Logiciels de montage</a></li>
                     <li><a href="#services">Mes services</a></li>
-                    <li><a href="#avis-clients">Clients Avis</a></li>
+                    <li><a href="#avis-clients">Avis clients</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="hamburger">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </button>
             </nav>
         </div>
     </header>
-
     <video class="video-annonce" src="video-annonce.mp4" controls autoplay muted></video>
 
     <main>
+        <!-- Section Accueil -->
         <section id="accueil" class="section">
             <div class="container">
                 <div class="contenu-accueil">
                     <h1>AMEN PROD</h1>
                     <h2>Votre partenaire pour des montages vidéo dynamiques et créatifs</h2>
                     <p>Basé à Ouagadougou, Burkina Faso, je suis spécialisé dans le montage de clips musicaux, courts métrages, publicités et bien plus encore. J'utilise les logiciels professionnels Première Pro, After Effects, Capcut Pro et Canva Pro pour donner vie à vos projets.</p>
-                    <a href="#portfolio" class="bouton">Découvrez mon portfolio</a>
+                    <a href="#portfolio" class="bouton" onclick="afficherMessage()">Découvrez mon portfolio</a>
                 </div>
             </div>
         </section>
 
+        <!-- Section Portfolio -->
         <section id="portfolio" class="section">
             <div class="container">
                 <h2>Mes réalisations</h2>
@@ -73,6 +71,7 @@
             </div>
         </section>
 
+        <!-- Section À propos -->
         <section id="a-propos" class="section">
             <div class="container">
                 <h2>À propos de moi</h2>
@@ -81,6 +80,7 @@
             </div>
         </section>
 
+        <!-- Section Logiciels -->
         <section id="logiciels" class="section">
             <div class="container">
                 <h2>Logiciels de montage</h2>
@@ -93,34 +93,45 @@
             </div>
         </section>
 
-        <section id="services" class="section">
-            <div class="container">
-                <h2>Mes Services</h2>
-                <div class="liste-services">
-                    <div class="service">
-                        <h3>Vente de Canva Pro</h3>
-                        <img src="image-canva-pro.jpg" alt="Canva Pro">
-                        <p>Profitez de tous les avantages de Canva Pro en l'acquérant chez moi.</p>
-                        <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank">
-                            <input type="submit" value="Acheter Canva Pro">
-                        </form>
-                    </div>
-                    <div class="service">
-                        <h3>Vente de Capcut Pro</h3>
-                        <img src="image-capcut-pro.jpg" alt="Capcut Pro">
-                        <p>Débloquez toutes les fonctionnalités de Capcut Pro pour des montages encore plus créatifs.</p>
-                        <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank">
-                            <input type="submit" value="Acheter Capcut Pro">
-                        </form>
-                    </div>
-                </div>
+        <!-- Section Services -->
+   <!-- Section Services -->
+   <section id="services" class="section">
+    <div class="container">
+        <h2>Mes Services</h2>
+        <div class="liste-services">
+            <div class="service">
+                <h3>Vente de Canva Pro</h3>
+                <img src="image-canva-pro.jpg" alt="Canva Pro">
+                <p>Profitez de tous les avantages de Canva Pro en l'acquérant chez moi.</p>
+                <!-- Bouton de paiement PayPal -->
+                <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                    <input class="pp-B5JXRGFYCRD6G" type="submit" value="Acheter Canva Pro" />
+                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+                    <section>Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                </form>
             </div>
-        </section>
+            <div class="service">
+                <h3>Vente de Capcut Pro</h3>
+                <img src="image-capcut-pro.jpg" alt="Capcut Pro">
+                <p>Débloquez toutes les fonctionnalités de Capcut Pro pour des montages encore plus créatifs.</p>
+                <!-- Bouton de paiement PayPal -->
+                <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank" style="display:inline-grid;justify-items:center;align-content:start;gap:0.5rem;">
+                    <input class="pp-B5JXRGFYCRD6G" type="submit" value="Acheter Capcut Pro" />
+                    <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="cards" />
+                    <section>Optimisé par <img src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-wordmark-color.svg" alt="paypal" style="height:0.875rem;vertical-align:middle;"/></section>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="avis-clients" class="section">
+        <!-- Section Avis Clients -->
+<!-- Section Avis Clients -->
+<section id="avis-clients" class="section">
     <div class="container">
         <h2>Avis clients</h2>
         <div class="liste-avis">
+            <!-- Avis 1 -->
             <div class="avis">
                 <img src="client1.jpg" alt="Client 1">
                 <h3>Madeleine SANOU</h3>
@@ -135,6 +146,8 @@
                     <span class="etoile">★</span>
                 </div>
             </div>
+
+            <!-- Avis 2 -->
             <div class="avis">
                 <img src="client2.jpg" alt="Client 2">
                 <h3>Jean BOUKARY</h3>
@@ -149,6 +162,8 @@
                     <span class="etoile">★</span>
                 </div>
             </div>
+
+            <!-- Avis 3 -->
             <div class="avis">
                 <img src="client3.jpg" alt="Client 3">
                 <h3>Fatoumata OUEDRAOGO</h3>
@@ -163,6 +178,8 @@
                     <span class="etoile active">★</span>
                 </div>
             </div>
+
+            <!-- Avis 4 -->
             <div class="avis">
                 <img src="client4.jpg" alt="Client 4">
                 <h3>Thomas DIALLO</h3>
@@ -177,6 +194,8 @@
                     <span class="etoile">★</span>
                 </div>
             </div>
+
+            <!-- Avis 5 -->
             <div class="avis">
                 <img src="client5.jpg" alt="Client 5">
                 <h3>Aminata KOUYATE</h3>
@@ -194,32 +213,38 @@
         </div>
     </div>
 </section>
-
-<section id="contact" class="section">
-    <div class="container">
-        <h2>Contactez-moi</h2>
-        <div class="contenu-contact">
-            <form>
-                <input type="text" placeholder="Votre nom" required>
-                <input type="email" placeholder="Votre email" required>
-                <textarea placeholder="Votre message" required></textarea>
-                <button type="submit">Envoyer</button>
-            </form>
-            <div class="coordonnées">
-                <p>Téléphone : +226 76 31 93 62</p>
-                <p>Email : amenprod@email.com</p>
+                    </div>
+                </div>
             </div>
+        </section>
+
+        <!-- Section Contact -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contactez-moi</h2>
+                <div class="contenu-contact">
+                    <form>
+                        <input type="text" placeholder="Votre nom" required>
+                        <input type="email" placeholder="Votre email" required>
+                        <textarea placeholder="Votre message" required></textarea>
+                        <button type="submit">Envoyer</button>
+                    </form>
+                    <div class="coordonnees">
+                        <p>Téléphone : +226 76 31 93 62</p>
+                        <p>Email : amenprod@email.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 AMEN PROD</p>
         </div>
-    </div>
-</section>
-</main>
+    </footer>
 
-<footer>
-    <div class="container">
-        <p>© 2023 AMEN PROD</p>
-    </div>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
