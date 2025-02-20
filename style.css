@@ -1,390 +1,291 @@
-/* -------------------------------
-   Reset et style global
-------------------------------- */
-
-*,
-*::before,
-*::after {
+/* Style général */
+body {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+    line-height: 1.6; /* Améliorer la lisibilité */
 }
 
-body {
-    background-color: #f7f7f7;
-    color: #333;
-    line-height: 1.6;
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333; /* Couleur de titre plus sombre */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: #007bff; /* Couleur de lien plus vive */
+    transition: color 0.3s ease; /* Transition de couleur au survol */
 }
 
-ul {
-    list-style: none;
+a:hover {
+    color: #0056b3; /* Couleur de lien au survol */
 }
 
-/* -------------------------------
-   Styles du header
-------------------------------- */
-
+/* Header */
 header {
-    background-color: #111;
-    color: #fff;
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    background-color: #f8f9fa; /* Couleur de fond plus claire */
+    padding: 20px 0;
+    border-bottom: 1px solid #dee2e6; /* Bordure inférieure */
 }
 
 header .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
+    justify-content: space-between; /* Aligner le logo et le menu */
+    align-items: center; /* Centrer verticalement */
 }
 
 header .logo img {
-    max-height: 50px;
+    max-height: 40px; /* Taille du logo réduite */
 }
 
 header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    gap: 25px;
 }
 
-header nav a {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+header nav li {
+    margin-left: 20px;
 }
 
-header nav a:hover {
-    color: #ff6600;
+/* Menu hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
-/* -------------------------------
-   Sections générales (Accueil, Portfolio, etc.)
-------------------------------- */
-
-section {
-    padding: 60px 0;
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
 }
 
-.container {
-    width: 85%;
-    margin: 0 auto;
-    max-width: 1200px;
+/* Vidéo d'annonce */
+.video-annonce {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
 }
 
-h1, h2, h3 {
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-/* -------------------------------
-   Section Accueil
-------------------------------- */
-
+/* Section Accueil */
 #accueil {
+    background-color: #f8f9fa; /* Couleur de fond claire */
+}
+
+#accueil .contenu-accueil {
     text-align: center;
-    background: url('background-image.jpg') center/cover no-repeat;
-    color: #fff;
-    padding: 120px 0;
+    padding: 60px 0; /* Marge intérieure plus grande */
 }
 
 #accueil h1 {
-    font-size: 50px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    font-size: 3rem; /* Taille du titre plus grande */
+    margin-bottom: 20px;
 }
 
 #accueil h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-#accueil p {
-    font-size: 18px;
-    line-height: 1.8;
+    font-size: 1.5rem; /* Taille du sous-titre */
     margin-bottom: 40px;
 }
 
 .bouton {
-    padding: 12px 35px;
-    font-size: 18px;
-    background-color: #ff6600;
-    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
     border-radius: 5px;
-    font-weight: 700;
+    font-size: 1.1rem;
     transition: background-color 0.3s ease;
 }
 
 .bouton:hover {
-    background-color: #e65c00;
+    background-color: #0056b3;
 }
 
-/* -------------------------------
-   Portfolio (galerie de projets)
-------------------------------- */
-
+/* Section Portfolio */
 #portfolio {
     background-color: #fff;
 }
 
-.gallery {
+#portfolio .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Taille minimale des cases */
+    gap: 20px;
 }
 
-.projet {
-    background-color: #f4f4f4;
+#portfolio .projet {
+    border: 1px solid #dee2e6; /* Bordure plus claire */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease; /* Transition au survol */
 }
 
-.projet img {
-    width: 100%;
+#portfolio .projet:hover {
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
+}
+
+#portfolio .projet img {
+    max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
-.projet:hover {
-    transform: translateY(-10px);
+#portfolio .projet video {
+    max-width: 100%;
+    height: auto;
 }
 
-.projet h3 {
-    font-size: 20px;
-    margin: 15px 0;
+#portfolio h3 {
+    margin-top: 10px;
+    color: #333;
 }
 
-.projet p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 15px;
+/* Section À propos */
+#a-propos {
+    background-color: #f8f9fa;
 }
 
-/* -------------------------------
-   Logiciels de montage (logos des logiciels)
-------------------------------- */
+#a-propos p {
+    margin-bottom: 20px;
+}
 
+/* Section Logiciels */
 #logiciels {
-    background-color: #f9f9f9;
-}
-
-.logos-logiciels {
-    display: flex;
-    justify-content: space-around;
-    gap: 40px;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 40px;
-}
-
-.logos-logiciels img {
-    max-width: 120px;
-    height: auto;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.logos-logiciels img:hover {
-    opacity: 1;
-}
-
-/* -------------------------------
-   Section des services
-------------------------------- */
-
-#services {
     background-color: #fff;
 }
 
-.liste-services {
+#logiciels .logos-logiciels {
     display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    justify-content: center;
+    gap: 30px; /* Espacement plus grand */
 }
 
-.service {
-    background-color: #f4f4f4;
-    padding: 25px;
-    border-radius: 8px;
-    text-align: center;
-    width: 30%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+#logiciels .logos-logiciels img {
+    max-height: 50px; /* Taille des logos */
     transition: transform 0.3s ease;
 }
 
-.service img {
-    max-width: 80%;
-    margin-bottom: 15px;
-    border-radius: 5px;
+#logiciels .logos-logiciels img:hover {
+    transform: scale(1.1); /* Légère augmentation de taille au survol */
 }
 
-.service h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
+/* Section Services */
+#services {
+    background-color: #f8f9fa;
 }
 
-.service p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 20px;
+#services .liste-services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.service:hover {
-    transform: translateY(-10px);
-}
-
-/* -------------------------------
-   Avis Clients
-------------------------------- */
-
-#avis-clients {
-    background-color: #f9f9f9;
-}
-
-.liste-avis {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-}
-
-.avis {
-    background-color: #fff;
+#services .service {
+    width: 350px; /* Largeur des cases */
+    border: 1px solid #dee2e6;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.avis img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
+#services .service:hover {
+    transform: scale(1.05);
 }
 
-.avis h3 {
-    font-size: 20px;
+#services .service img {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 10px;
 }
 
-.avis p {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 15px;
+#services .service h3 {
+    margin-bottom: 10px;
+    color: #333;
 }
 
-.etoiles {
-    font-size: 22px;
-    color: #ff6600;
+#services .service form {
+    display: inline-block; /* Pour centrer le bouton */
 }
 
-/* -------------------------------
-   Contact
-------------------------------- */
-
-#contact {
-    background-color: #fff;
-    padding-bottom: 40px;
-}
-
-form {
-    display: grid;
-    gap: 20px;
-    width: 60%;
-    margin: 0 auto;
-}
-
-input, textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button {
-    padding: 12px 30px;
-    font-size: 18px;
-    background-color: #ff6600;
-    color: white;
+#services .service input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #e65c00;
+#services .service input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
-/* -------------------------------
-   Footer
-------------------------------- */
+/* Section Avis Clients */
+#avis-clients {
+    background-color: #fff;
+}
 
-footer {
-    background-color: #111;
-    color: #fff;
-    text-align: center;
+#avis-clients .liste-avis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+#avis-clients .avis {
+    border: 1px solid #dee2e6;
     padding: 20px;
-    margin-top: 60px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-footer p {
-    font-size: 14px;
-    opacity: 0.8;
+#avis-clients .avis:hover {
+    transform: scale(1.05);
 }
 
-/* -------------------------------
-   Responsive Design
-------------------------------- */
-
-@media (max-width: 768px) {
-    .container {
-        width: 90%;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .liste-services {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service {
-        width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    .logos-logiciels {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    form {
-        width: 100%;
-    }
+#avis-clients .avis img {
+    max-width: 60px; /* Taille des avatars */
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    vertical-align: middle;
 }
+
+#avis-clients .message-avis {
+    display: inline-block;
+}
+
+#avis-clients h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+#avis-clients .etoiles {
+    color: gold;
+}
+
+/* Section Contact */
+#contact {
+    background-color: #f8f9fa;
+}
+
+#contact .contenu-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:
