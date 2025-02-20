@@ -9,29 +9,47 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-    <div class="container">
-        <div class="logo">
-            <img src="logo.png" alt="Logo AMEN PROD">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo AMEN PROD">
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#a-propos">À propos</a></li>
+                    <li><a href="#portfolio">Mes réalisations</a></li>
+                    <li><a href="#logiciels">Logiciels de montage</a></li>
+                    <li><a href="#services">Mes services</a></li>
+                    <li><a href="#avis-clients">Clients Avis</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">  <button class="hamburger">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </button>
+                </div>
+            </nav>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#a-propos">À propos</a></li>
-                <li><a href="#portfolio">Mes réalisations</a></li>
-                <li><a href="#logiciels">Logiciels de montage</a></li>
-                <li><a href="#services">Mes services</a></li>
-                <li><a href="#avis-clients">Clients Avis</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </button>
-        </nav>
-    </div>
-</header>
+    </header>
+
+    <script>
+        // Sélection des éléments (plus besoin de déclarations multiples)
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        // Écouteur d'événement pour le bouton hamburger
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Les autres fonctions JavaScript (changerCouleurFond, basculerVisibilite, etc.)
+        // peuvent être ajoutées ici si vous en avez besoin.
+        // ...
+    </script>
+</body>
+</html>
 
     <video class="video-annonce" src="video-annonce.mp4" controls autoplay muted></video>
 
