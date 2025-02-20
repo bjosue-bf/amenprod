@@ -6,6 +6,13 @@ function afficherMessage(message) {
     alert(message);
 }
 
+const menuToggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+menuToggle.addEventListener('click', () => {
+  nav.classList.toggle('active');
+});
+
 // Fonction pour changer la couleur de fond d'un élément avec une transition douce
 function changerCouleurFond(element, couleur) {
     element.style.transition = "background-color 0.5s ease"; // Transition douce
