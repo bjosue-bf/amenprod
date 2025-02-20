@@ -1,182 +1,204 @@
-/* Styles généraux */
-body {
-    font-family: 'Arial', sans-serif;
+/* Réinitialisation des styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
     color: #333;
-    background-color: #f8f8f8;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
 }
 
-/* Header */
+/* HEADER */
 header {
     background: #222;
-    color: white;
     padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    max-width: 150px;
 }
 
 nav ul {
     list-style: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
     gap: 20px;
 }
 
-nav a {
-    color: white;
+nav ul li a {
     text-decoration: none;
-    font-weight: bold;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
 }
 
-/* Section Hero */
+nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* HERO */
 .hero {
     position: relative;
-    text-align: center;
-    color: white;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
 }
 
-.hero .video-annonce {
+.video-annonce {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
 }
 
 .overlay {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.overlay h1 {
+    font-size: 50px;
+}
+
+.overlay p {
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .bouton {
     display: inline-block;
-    background: #ff6600;
-    color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    background: #f4a261;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
 .bouton:hover {
-    background: #cc5500;
+    background: #e76f51;
 }
 
-/* Portfolio */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 40px 0;
-}
-
-.projet img {
-    width: 100%;
-    border-radius: 5px;
-}
-
-.projet video {
-    width: 100%;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-/* Services */
-.liste-services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
+/* SECTIONS */
+.section {
+    padding: 60px 0;
     text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    max-width: 300px;
 }
 
-.service:hover {
-    transform: translateY(-5px);
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
-/* Avis Clients */
-.liste-avis {
+/* SERVICES & AVIS */
+.liste-services, .liste-avis {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
 }
 
-.avis {
+.service, .avis {
     background: white;
     padding: 15px;
     border-radius: 10px;
+    width: 250px;
     text-align: center;
-    max-width: 300px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.avis img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+.service img, .avis img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
-/* Contact */
+/* CONTACT */
+.contenu-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
 form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     max-width: 400px;
-    margin: auto;
+    width: 100%;
 }
 
-input, textarea, button {
+input, textarea {
     padding: 10px;
-    border: 1px solid #ddd;
+    width: 100%;
+    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 button {
-    background: #ff6600;
+    background: #f4a261;
+    padding: 10px;
     color: white;
-    font-weight: bold;
+    border: none;
     cursor: pointer;
-    transition: 0.3s;
+    border-radius: 5px;
 }
 
 button:hover {
-    background: #cc5500;
+    background: #e76f51;
 }
 
-/* Footer */
+.coordonnees p {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 20px;
     background: #222;
     color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero {
+        height: 80vh;
+    }
+    .overlay h1 {
+        font-size: 32px;
+    }
+    .overlay p {
+        font-size: 16px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .liste-services, .liste-avis {
+        flex-direction: column;
+    }
+    .contenu-contact {
+        flex-direction: column;
+    }
 }
