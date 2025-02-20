@@ -3,6 +3,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Améliorer la lisibilité */
 }
 
 .container {
@@ -17,21 +18,34 @@ body {
 
 h1, h2 {
     text-align: center;
+    color: #333; /* Couleur de titre plus sombre */
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #007bff; /* Couleur de lien plus vive */
+    transition: color 0.3s ease; /* Transition de couleur au survol */
+}
+
+a:hover {
+    color: #0056b3; /* Couleur de lien au survol */
 }
 
 /* Header */
 header {
-    background-color: #f0f0f0;
+    background-color: #f8f9fa; /* Couleur de fond plus claire */
     padding: 20px 0;
+    border-bottom: 1px solid #dee2e6; /* Bordure inférieure */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Aligner le logo et le menu */
+    align-items: center; /* Centrer verticalement */
 }
 
 header .logo img {
-    max-height: 50px;
+    max-height: 40px; /* Taille du logo réduite */
 }
 
 header nav ul {
@@ -39,7 +53,6 @@ header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: flex-end; /* Alignement à droite */
 }
 
 header nav li {
@@ -66,38 +79,69 @@ header nav li {
 .video-annonce {
     width: 100%;
     max-height: 500px;
-    object-fit: cover; /* Pour remplir l'espace sans déformer la vidéo */
+    object-fit: cover;
 }
 
 /* Section Accueil */
+#accueil {
+    background-color: #f8f9fa; /* Couleur de fond claire */
+}
+
 #accueil .contenu-accueil {
     text-align: center;
+    padding: 60px 0; /* Marge intérieure plus grande */
+}
+
+#accueil h1 {
+    font-size: 3rem; /* Taille du titre plus grande */
+    margin-bottom: 20px;
+}
+
+#accueil h2 {
+    font-size: 1.5rem; /* Taille du sous-titre */
+    margin-bottom: 40px;
 }
 
 .bouton {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #007bff;
     color: #fff;
     border-radius: 5px;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.bouton:hover {
+    background-color: #0056b3;
 }
 
 /* Section Portfolio */
+#portfolio {
+    background-color: #fff;
+}
+
 #portfolio .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Taille minimale des cases */
     gap: 20px;
 }
 
 #portfolio .projet {
-    border: 1px solid #ccc;
+    border: 1px solid #dee2e6; /* Bordure plus claire */
     padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    transition: transform 0.3s ease; /* Transition au survol */
+}
+
+#portfolio .projet:hover {
+    transform: scale(1.05); /* Légère augmentation de taille au survol */
 }
 
 #portfolio .projet img {
     max-width: 100%;
     height: auto;
+    object-fit: cover;
 }
 
 #portfolio .projet video {
@@ -105,53 +149,121 @@ header nav li {
     height: auto;
 }
 
+#portfolio h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Section À propos */
+#a-propos {
+    background-color: #f8f9fa;
+}
+
+#a-propos p {
+    margin-bottom: 20px;
+}
+
 /* Section Logiciels */
+#logiciels {
+    background-color: #fff;
+}
+
 #logiciels .logos-logiciels {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Espacement plus grand */
 }
 
 #logiciels .logos-logiciels img {
-    max-height: 50px;
+    max-height: 50px; /* Taille des logos */
+    transition: transform 0.3s ease;
+}
+
+#logiciels .logos-logiciels img:hover {
+    transform: scale(1.1); /* Légère augmentation de taille au survol */
 }
 
 /* Section Services */
+#services {
+    background-color: #f8f9fa;
+}
+
 #services .liste-services {
     display: flex;
-    flex-wrap: wrap; /* Pour passer à la ligne sur les petits écrans */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
 #services .service {
-    border: 1px solid #ccc;
+    width: 350px; /* Largeur des cases */
+    border: 1px solid #dee2e6;
     padding: 20px;
     text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#services .service:hover {
+    transform: scale(1.05);
 }
 
 #services .service img {
     max-width: 100%;
     height: auto;
+    margin-bottom: 10px;
+}
+
+#services .service h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#services .service form {
+    display: inline-block; /* Pour centrer le bouton */
+}
+
+#services .service input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#services .service input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 /* Section Avis Clients */
+#avis-clients {
+    background-color: #fff;
+}
+
 #avis-clients .liste-avis {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 #avis-clients .avis {
-    border: 1px solid #ccc;
+    border: 1px solid #dee2e6;
     padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#avis-clients .avis:hover {
+    transform: scale(1.05);
 }
 
 #avis-clients .avis img {
-    max-width: 80px;
-    height: 80px;
+    max-width: 60px; /* Taille des avatars */
+    height: 60px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 15px;
     vertical-align: middle;
 }
 
@@ -159,68 +271,21 @@ header nav li {
     display: inline-block;
 }
 
+#avis-clients h3 {
+    margin-bottom: 5px;
+    color: #333;
+}
+
 #avis-clients .etoiles {
     color: gold;
 }
 
 /* Section Contact */
+#contact {
+    background-color: #f8f9fa;
+}
+
 #contact .contenu-contact {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Deux colonnes */
-    gap: 20px;
-}
-
-#contact form input,
-#contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-}
-
-#contact form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-#contact .coordonnées {
-    text-align: right;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* Media queries pour le responsive */
-@media (max-width: 768px) {
-    /* Styles pour les écrans plus petits que 768px (tablettes et mobiles) */
-    header nav ul {
-        flex-direction: column; /* Menu vertical */
-        text-align: center;
-        display: none; /* Masquer le menu par défaut */
-    }
-
-    header nav li {
-        margin: 10px 0;
-    }
-
-    .hamburger {
-        display: block; /* Afficher le bouton hamburger */
-        margin-left: auto; /* Aligner à droite */
-    }
-
-    #contact .contenu-contact {
-        grid-template-columns: 1fr; /* Une seule colonne */
-    }
-
-    #contact .coordonnées {
-        text-align: center;
-    }
-}
+    grid-template-columns: 1fr 1fr;
+    gap:
