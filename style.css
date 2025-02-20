@@ -1,314 +1,182 @@
-/* Styles globaux */
-* {
+/* Styles généraux */
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
     color: #333;
+    background-color: #f8f8f8;
 }
 
 .container {
     width: 90%;
-    margin: 0 auto;
     max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Header */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-}
-
-header .logo img {
-    width: 150px;
-}
-
-header nav ul {
-    list-style-type: none;
-    text-align: center;
-}
-
-header nav ul li {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-header nav ul li a:hover {
-    color: #ff6347; /* couleur hover */
-}
-
-/* Sections */
-.section {
-    padding: 60px 0;
-    margin-bottom: 40px;
-}
-
-.video-annonce {
+    background: #222;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
     width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-/* Accueil */
-#accueil {
-    background-color: #222;
-    color: #fff;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section Hero */
+.hero {
+    position: relative;
     text-align: center;
+    color: white;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-#accueil h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
+.hero .video-annonce {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
 
-#accueil h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-#accueil p {
-    font-size: 18px;
-    margin-bottom: 30px;
+.overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .bouton {
-    background-color: #ff6347;
-    padding: 10px 20px;
+    display: inline-block;
+    background: #ff6600;
     color: white;
-    text-decoration: none;
+    padding: 10px 20px;
     border-radius: 5px;
-    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .bouton:hover {
-    background-color: #e5533d;
+    background: #cc5500;
 }
 
 /* Portfolio */
-#portfolio {
-    background-color: #fff;
-}
-
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    justify-content: space-between;
-}
-
-.projet {
-    width: 30%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    padding: 40px 0;
 }
 
 .projet img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.projet h3 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.projet p {
-    font-size: 16px;
-    margin-bottom: 10px;
+    width: 100%;
+    border-radius: 5px;
 }
 
 .projet video {
     width: 100%;
-    height: 200px;
-    border-radius: 10px;
-}
-
-/* À propos */
-#a-propos {
-    background-color: #e9e9e9;
-}
-
-#a-propos p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Logiciels */
-#logiciels {
-    background-color: #fff;
-}
-
-.logos-logiciels {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.logos-logiciels img {
-    width: 100px;
-    height: auto;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
 /* Services */
-#services {
-    background-color: #f4f4f4;
-}
-
 .liste-services {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
 }
 
 .service {
-    width: 25%;
-    background-color: #fff;
-    padding: 15px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    max-width: 300px;
 }
 
-.service img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.service:hover {
+    transform: translateY(-5px);
 }
 
-.service h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.service .bouton {
-    background-color: #ff6347;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.service .bouton:hover {
-    background-color: #e5533d;
-}
-
-/* Avis clients */
-#avis-clients {
-    background-color: #fff;
-}
-
+/* Avis Clients */
 .liste-avis {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
 .avis {
-    width: 30%;
-    background-color: #f9f9f9;
-    padding: 20px;
+    background: white;
+    padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .avis img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.avis h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.message-avis p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.etoiles {
-    display: flex;
-    gap: 5px;
-}
-
-.etoile {
-    font-size: 20px;
-    color: #ff7b47;
-}
-
-.etoile:not(.active) {
-    color: #ddd;
 }
 
 /* Contact */
-#contact {
-    background-color: #f4f4f4;
-}
-
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+    max-width: 400px;
+    margin: auto;
 }
 
-form input,
-form textarea {
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
+input, textarea, button {
+    padding: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-form button {
-    background-color: #ff6347;
-    padding: 15px;
-    font-size: 18px;
+button {
+    background: #ff6600;
     color: white;
-    border: none;
-    border-radius: 5px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.3s;
 }
 
-form button:hover {
-    background-color: #e5533d;
+button:hover {
+    background: #cc5500;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 14px;
+    padding: 20px;
+    background: #222;
+    color: white;
 }
