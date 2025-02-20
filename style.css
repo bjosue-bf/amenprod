@@ -36,13 +36,13 @@ header nav ul {
 
 header nav ul li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 header nav ul li a:hover {
@@ -51,8 +51,8 @@ header nav ul li a:hover {
 
 /* Sections */
 .section {
-    padding: 60px 0;
-    margin-bottom: 40px;
+    padding: 50px 0;
+    margin-bottom: 30px;
 }
 
 .video-annonce {
@@ -72,14 +72,14 @@ header nav ul li a:hover {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 15px;
+    justify-content: center;
 }
 
 .projet {
-    width: 30%;
+    width: 28%;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -92,18 +92,18 @@ header nav ul li a:hover {
 }
 
 .projet h3 {
-    font-size: 22px;
+    font-size: 20px;
     margin: 10px 0;
 }
 
 .projet p {
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 10px;
 }
 
 .projet video {
     width: 100%;
-    height: 200px;
+    height: 180px;
     border-radius: 10px;
 }
 
@@ -114,13 +114,13 @@ header nav ul li a:hover {
 
 .liste-services {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .service {
-    width: 30%;
+    width: 28%;
     background-color: #fff;
     padding: 15px;
     text-align: center;
@@ -132,7 +132,7 @@ header nav ul li a:hover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 /* Avis clients */
@@ -142,30 +142,30 @@ header nav ul li a:hover {
 
 .liste-avis {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .avis {
-    width: 30%;
+    width: 28%;
     background-color: #f9f9f9;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
 .avis img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     margin-bottom: 10px;
     object-fit: cover;
 }
 
 .avis h3 {
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
 }
 
@@ -181,7 +181,7 @@ header nav ul li a:hover {
 }
 
 .etoile {
-    font-size: 16px;
+    font-size: 14px;
     color: #ff7b47;
 }
 
