@@ -33,7 +33,7 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #f0f0f0; /* Couleur de fond légèrement plus sombre */
+    background-color: #f0f0f0;
     padding: 20px 0;
     border-bottom: 1px solid #dee2e6;
 }
@@ -46,7 +46,7 @@ header .container {
 
 header .logo img {
     max-height: 40px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul {
@@ -304,7 +304,13 @@ header nav li {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
-    #contact form button:hover {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact form button:hover {
     background-color: #0056b3;
 }
 
@@ -318,19 +324,18 @@ header nav li {
 
 /* Footer */
 footer {
-    background-color: #343a40; /* Couleur de fond plus sombre */
+    background-color: #343a40;
     color: #fff;
     padding: 20px 0;
     text-align: center;
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
-    /* Styles pour les écrans plus petits (tablettes et mobiles) */
-
+@media (max-width: 1024px) {
+    /* Tablettes en paysage et petits écrans */
     header .container {
-        flex-direction: column; /* Menu vertical */
-        align-items: flex-start; /* Aligner à gauche */
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     header nav ul {
@@ -343,8 +348,8 @@ footer {
     }
 
     .hamburger {
-        display: block; /* Afficher le bouton hamburger */
-        margin-top: 10px; /* Ajouter de l'espace au-dessus */
+        display: block;
+        margin-top: 10px;
         cursor: pointer;
     }
 
@@ -365,14 +370,51 @@ footer {
     }
 
     #services .service {
-        width: 100%; /* Cases de service plus larges */
+        width: 100%;
     }
 
     #contact .contenu-contact {
-        grid-template-columns: 1fr; /* Formulaire et coordonnées sur une seule colonne */
+        grid-template-columns: 1fr;
     }
 
     #contact .coordonnées {
         text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles pour les mobiles */
+    .hamburger {
+        display: block;
+    }
+
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    #accueil h1 {
+        font-size: 2rem;
+    }
+
+    #accueil h2 {
+        font-size: 1rem;
+    }
+
+    #portfolio .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    #services .service {
+        width: 100%;
+    }
+
+    #contact .contenu-contact {
+        grid-template-columns: 1fr;
     }
 }
