@@ -64,41 +64,6 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Accueil */
-#accueil {
-    background-color: #222;
-    color: #fff;
-    text-align: center;
-}
-
-#accueil h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-#accueil h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-#accueil p {
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.bouton {
-    background-color: #ff6347;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-}
-
-.bouton:hover {
-    background-color: #e5533d;
-}
-
 /* Portfolio */
 #portfolio {
     background-color: #fff;
@@ -126,6 +91,16 @@ header nav ul li a:hover {
     border-radius: 10px;
 }
 
+.projet h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+.projet p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 .projet video {
     width: 100%;
     height: 200px;
@@ -141,10 +116,11 @@ header nav ul li a:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .service {
-    width: 25%;
+    width: 30%;
     background-color: #fff;
     padding: 15px;
     text-align: center;
@@ -168,6 +144,7 @@ header nav ul li a:hover {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .avis {
@@ -178,45 +155,27 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Adaptation pour mobile */
+.avis img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.avis h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    header nav ul {
-        display: flex;
+    .liste-services, .liste-avis {
         flex-direction: column;
         align-items: center;
     }
 
-    header nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projet {
+    .service, .avis {
         width: 90%;
-    }
-
-    .liste-services,
-    .liste-avis {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service,
-    .avis {
-        width: 90%;
-    }
-
-    .logos-logiciels {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .logos-logiciels img {
-        width: 80px;
     }
 }
+
