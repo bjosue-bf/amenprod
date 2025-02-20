@@ -46,7 +46,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ff6347; /* couleur hover */
+    color: #ff6347;
 }
 
 /* Sections */
@@ -63,7 +63,6 @@ header nav ul li a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Accueil */
 #accueil {
@@ -127,46 +126,10 @@ header nav ul li a:hover {
     border-radius: 10px;
 }
 
-.projet h3 {
-    font-size: 22px;
-    margin: 10px 0;
-}
-
-.projet p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
 .projet video {
     width: 100%;
     height: 200px;
     border-radius: 10px;
-}
-
-/* À propos */
-#a-propos {
-    background-color: #e9e9e9;
-}
-
-#a-propos p {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-/* Logiciels */
-#logiciels {
-    background-color: #fff;
-}
-
-.logos-logiciels {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.logos-logiciels img {
-    width: 100px;
-    height: auto;
 }
 
 /* Services */
@@ -196,28 +159,6 @@ header nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.service h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-.service p {
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.service .bouton {
-    background-color: #ff6347;
-    padding: 10px 20px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.service .bouton:hover {
-    background-color: #e5533d;
-}
-
 /* Avis clients */
 #avis-clients {
     background-color: #fff;
@@ -237,78 +178,45 @@ header nav ul li a:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.avis img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
+/* Adaptation pour mobile */
+@media (max-width: 768px) {
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.avis h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 
-.message-avis p {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.etoiles {
-    display: flex;
-    gap: 5px;
-}
+    .projet {
+        width: 90%;
+    }
 
-.etoile {
-    font-size: 20px;
-    color: #ff7b47;
-}
+    .liste-services,
+    .liste-avis {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.etoile:not(.active) {
-    color: #ddd;
-}
+    .service,
+    .avis {
+        width: 90%;
+    }
 
-/* Contact */
-#contact {
-    background-color: #f4f4f4;
-}
+    .logos-logiciels {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-form input,
-form textarea {
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background-color: #ff6347;
-    padding: 15px;
-    font-size: 18px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #e5533d;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 14px;
+    .logos-logiciels img {
+        width: 80px;
+    }
 }
