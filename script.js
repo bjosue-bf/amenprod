@@ -30,3 +30,14 @@ function basculerVisibilite(element) {
         }, 500); // Attente que la transition soit terminée
     }
 }
+
+// Fonction pour gérer l'affichage/masquage du menu sur mobile
+const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+
+hamburger.addEventListener("click", () => {
+    menu.classList.toggle("show");
+});
+
+// Fonction pour gérer l'affichage des avis clients (si nécessaire)
+// ...
