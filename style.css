@@ -33,7 +33,7 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #f0f0f0; /* Couleur de fond légèrement plus sombre */
+    background-color: #f0f0f0;
     padding: 20px 0;
     border-bottom: 1px solid #dee2e6;
 }
@@ -46,7 +46,8 @@ header .container {
 
 header .logo img {
     max-height: 40px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre portée */
+    filter: brightness(0) invert(1); /* Améliore la visibilité du logo */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 header nav ul {
@@ -125,6 +126,80 @@ header nav li {
 #portfolio .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+#portfolio .projet {
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+#portfolio .projet:hover {
+    transform: scale(1.05);
+}
+
+#portfolio .projet img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#portfolio .projet video {
+    max-width: 100%;
+    height: auto;
+}
+
+#portfolio h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    header nav li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #accueil .contenu-accueil {
+        padding: 40px 0;
+    }
+
+    #accueil h1 {
+        font-size: 2.5rem;
+    }
+
+    #accueil h2 {
+        font-size: 1.2rem;
+    }
+
+    #portfolio .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
