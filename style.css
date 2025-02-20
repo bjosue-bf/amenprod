@@ -60,7 +60,7 @@ header nav li {
     margin-left: 20px;
 }
 
-/* Menu hamburger */
+/* Menu Hamburger */
 .hamburger {
     display: none;
     background: none;
@@ -74,6 +74,34 @@ header nav li {
     height: 3px;
     background-color: #333;
     margin: 5px 0;
+}
+
+/* Menu de navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    /* Masquer le menu par défaut sur les petits écrans */
+    nav ul {
+        display: none; 
+        flex-direction: column; /* Afficher les éléments du menu en colonne */
+    }
+
+    nav.active ul {
+        display: flex; /* Afficher le menu quand la classe 'active' est ajoutée */
+    }
+
+    .hamburger {
+        display: block; /* Afficher le bouton hamburger sur mobile */
+    }
 }
 
 /* Vidéo d'annonce */
