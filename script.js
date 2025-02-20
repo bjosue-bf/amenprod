@@ -1,4 +1,4 @@
-// Fonction pour afficher un message d'alerte avec un texte dynamique
+// Fonction pour afficher un message d'alerte (peut être utilisée pour des notifications)
 function afficherMessage(message) {
     if (!message) {
         message = "Bienvenu sur notre site web. Cliquez sur OK pour continuer !"; // Message par défaut
@@ -6,11 +6,13 @@ function afficherMessage(message) {
     alert(message);
 }
 
-const menuToggle = document.querySelector('.menu-toggle');
-const nav = document.querySelector('nav');
+// Sélection des éléments du menu et du bouton hamburger
+const menuToggle = document.querySelector('.menu-toggle'); // Le div qui contient le hamburger
+const nav = document.querySelector('nav'); // La balise <nav>
 
+// Écouteur d'événement pour le bouton hamburger (menu mobile)
 menuToggle.addEventListener('click', () => {
-  nav.classList.toggle('active');
+    nav.classList.toggle('active'); // Bascule la classe "active" sur la navigation
 });
 
 // Fonction pour changer la couleur de fond d'un élément avec une transition douce
@@ -23,32 +25,25 @@ function changerCouleurFond(element, couleur) {
 function basculerVisibilite(element) {
     if (element.style.display === "none" || !element.style.display) {
         element.style.display = "block";
-        // Ajout d'une animation de fondu lorsque l'élément devient visible
-        element.style.opacity = 0;
+        element.style.opacity = 0; // Opacité initiale à 0 (invisible)
         setTimeout(function () {
-            element.style.transition = "opacity 0.5s ease-in-out"; // Transition du fondu
-            element.style.opacity = 1;
-        }, 10); // Délai de 10ms pour que la transition commence
+            element.style.transition = "opacity 0.5s ease-in-out";
+            element.style.opacity = 1; // Opacité finale à 1 (visible)
+        }, 10); // Délai pour que la transition se déclenche
     } else {
-        // Ajout d'une animation de fondu pour la disparition de l'élément
-        element.style.opacity = 0;
+        element.style.opacity = 0; // Opacité initiale à 1 (visible)
         setTimeout(function () {
-            element.style.display = "none"; // Masquer l'élément après le fondu
-        }, 500); // Attente que la transition soit terminée
+            element.style.display = "none"; // Masquer après la transition
+        }, 500); // Délai pour la durée de la transition
     }
 }
 
-<script>
-    // Sélectionner le bouton hamburger et le menu
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('header nav');
+// Code pour le menu hamburger (plus simple et plus efficace)
+// Plus besoin de sélectionner hamburger et nav une deuxième fois, on utilise ceux déclarés plus haut
 
-    // Ajouter un événement de clic sur le bouton hamburger
-    hamburger.addEventListener('click', () => {
-        // Ajouter ou retirer la classe 'active' sur le menu
-        nav.classList.toggle('active');
-    });
-</script>
+// L'écouteur d'événement est déjà défini plus haut, on garde seulement ça :
+// nav.classList.toggle('active'); // Bascule la classe "active" au clic
+
 
 // Fonction pour gérer l'affichage des avis clients (si nécessaire)
-// ...
+// ... (votre code pour les avis clients)
