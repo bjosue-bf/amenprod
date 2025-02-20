@@ -1,202 +1,226 @@
-/* Styles globaux */
-* {
+/* Style général */
+body {
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
 .container {
-    width: 90%;
+    max-width: 960px;
     margin: 0 auto;
-    max-width: 1200px;
+    padding: 20px;
+}
+
+.section {
+    padding: 40px 0;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
 }
 
 /* Header */
 header {
-    background-color: #333;
-    color: #fff;
+    background-color: #f0f0f0;
     padding: 20px 0;
 }
 
 header .logo img {
-    width: 150px;
+    max-height: 50px;
 }
 
 header nav ul {
-    list-style-type: none;
-    text-align: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Alignement à droite */
 }
 
-header nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+header nav li {
+    margin-left: 20px;
 }
 
-header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
+/* Menu hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
 }
 
-header nav ul li a:hover {
-    color: #ff6347;
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
 }
 
-/* Sections */
-.section {
-    padding: 50px 0;
-    margin-bottom: 30px;
-}
-
+/* Vidéo d'annonce */
 .video-annonce {
     width: 100%;
-    max-width: 800px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 500px;
+    object-fit: cover; /* Pour remplir l'espace sans déformer la vidéo */
 }
 
-/* Portfolio */
-#portfolio {
-    background-color: #fff;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.projet {
-    width: 28%;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Section Accueil */
+#accueil .contenu-accueil {
     text-align: center;
 }
 
-.projet img {
+.bouton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Section Portfolio */
+#portfolio .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+    gap: 20px;
+}
+
+#portfolio .projet {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+#portfolio .projet img {
     max-width: 100%;
     height: auto;
-    border-radius: 10px;
 }
 
-.projet h3 {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-.projet p {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.projet video {
-    width: 100%;
-    height: 180px;
-    border-radius: 10px;
-}
-
-/* Services */
-#services {
-    background-color: #f4f4f4;
-}
-
-.liste-services {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.service {
-    width: 28%;
-    background-color: #fff;
-    padding: 15px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.service img {
-    width: 100%;
+#portfolio .projet video {
+    max-width: 100%;
     height: auto;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-/* Avis clients */
-#avis-clients {
-    background-color: #fff;
-}
-
-.liste-avis {
+/* Section Logiciels */
+#logiciels .logos-logiciels {
     display: flex;
-    gap: 15px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.avis {
-    width: 28%;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#logiciels .logos-logiciels img {
+    max-height: 50px;
+}
+
+/* Section Services */
+#services .liste-services {
+    display: flex;
+    flex-wrap: wrap; /* Pour passer à la ligne sur les petits écrans */
+    justify-content: center;
+    gap: 20px;
+}
+
+#services .service {
+    border: 1px solid #ccc;
+    padding: 20px;
     text-align: center;
 }
 
-.avis img {
-    width: 50px;
-    height: 50px;
+#services .service img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Avis Clients */
+#avis-clients .liste-avis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+    gap: 20px;
+}
+
+#avis-clients .avis {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+#avis-clients .avis img {
+    max-width: 80px;
+    height: 80px;
     border-radius: 50%;
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+#avis-clients .message-avis {
+    display: inline-block;
+}
+
+#avis-clients .etoiles {
+    color: gold;
+}
+
+/* Section Contact */
+#contact .contenu-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes */
+    gap: 20px;
+}
+
+#contact form input,
+#contact form textarea {
+    width: 100%;
+    padding: 10px;
     margin-bottom: 10px;
-    object-fit: cover;
+    border: 1px solid #ccc;
 }
 
-.avis h3 {
-    font-size: 16px;
-    margin-bottom: 5px;
+#contact form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
 }
 
-.message-avis p {
-    font-size: 14px;
-    margin-bottom: 5px;
+#contact .coordonnées {
+    text-align: right;
 }
 
-.etoiles {
-    display: flex;
-    justify-content: center;
-    gap: 5px;
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
 }
 
-.etoile {
-    font-size: 14px;
-    color: #ff7b47;
-}
-
-.etoile:not(.active) {
-    color: #ddd;
-}
-
-/* Responsive */
+/* Media queries pour le responsive */
 @media (max-width: 768px) {
-    .liste-services, .liste-avis {
-        flex-direction: column;
-        align-items: center;
+    /* Styles pour les écrans plus petits que 768px (tablettes et mobiles) */
+    header nav ul {
+        flex-direction: column; /* Menu vertical */
+        text-align: center;
+        display: none; /* Masquer le menu par défaut */
     }
 
-    .service, .avis {
-        width: 90%;
+    header nav li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block; /* Afficher le bouton hamburger */
+        margin-left: auto; /* Aligner à droite */
+    }
+
+    #contact .contenu-contact {
+        grid-template-columns: 1fr; /* Une seule colonne */
+    }
+
+    #contact .coordonnées {
+        text-align: center;
     }
 }
