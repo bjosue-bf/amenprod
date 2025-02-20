@@ -110,10 +110,18 @@ nav.active ul {
 }
 
 @media (max-width: 768px) {
-    /* Masquer le menu par défaut sur les petits écrans */
     nav ul {
-        display: none; 
+        display: flex; /* Afficher le menu par défaut */
         flex-direction: column; /* Afficher les éléments du menu en colonne */
+        position: fixed; /* Positionner le menu de manière fixe */
+        top: 0;
+        left: 0;
+        width: 100%; /* Occuper toute la largeur */
+        height: 100%; /* Occuper toute la hauteur */
+        background-color: #000; /* Fond noir */
+        align-items: center; /* Centrer horizontalement */
+        justify-content: center; /* Centrer verticalement */
+        /* Ajoutez d'autres styles pour personnaliser l'apparence du menu sur téléphone */
     }
 
     nav.active ul {
