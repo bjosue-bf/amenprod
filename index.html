@@ -1,104 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMEN PROD - Montage Vidéo</title>
     <meta name="description" content="AMEN PROD, votre partenaire pour des montages vidéo dynamiques et créatifs à Ouagadougou. Spécialisé dans les clips musicaux, courts métrages, publicités et plus encore.">
     <meta name="keywords" content="AMEN PROD, montage vidéo, Ouagadougou, Burkina Faso, clips musicaux, courts métrages, publicités, Première Pro, After Effects, Capcut Pro, Canva Pro">
+    <title>AMEN PROD - Montage Vidéo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
 </head>
+
 <body>
-    <header>
+    <header class="header">
         <div class="container">
             <div class="logo">
                 <img src="logo.png" alt="Logo AMEN PROD">
             </div>
-            <nav>
+            <nav class="nav">
                 <ul>
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#a-propos">À propos</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Mes réalisations</a></li>
+                    <li><a href="#logiciels">Logiciels</a></li>
+                    <li><a href="#services">Mes services</a></li>
                     <li><a href="#avis-clients">Avis clients</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <section class="hero">
-        <video class="video-annonce" src="video-annonce.mp4" autoplay muted loop></video>
-        <div class="overlay">
-            <h1>AMEN PROD</h1>
-            <p>Votre partenaire pour des montages vidéo dynamiques et créatifs</p>
-            <a href="#portfolio" class="bouton">Découvrez mon travail</a>
-        </div>
-    </section>
-    
+
     <main>
-        <section id="portfolio" class="section">
+        <!-- Section Accueil -->
+        <section id="accueil" class="section accueil">
             <div class="container">
-                <h2>Portfolio</h2>
+                <div class="accueil-content">
+                    <h1>AMEN PROD</h1>
+                    <h2>Votre partenaire pour des montages vidéo dynamiques et créatifs</h2>
+                    <p>Spécialisé dans les clips musicaux, courts métrages, publicités et bien plus. Basé à Ouagadougou, Burkina Faso, j'utilise les meilleurs outils comme Première Pro, After Effects, Capcut Pro et Canva Pro.</p>
+                    <a href="#portfolio" class="btn-primary">Découvrez mon portfolio</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Portfolio -->
+        <section id="portfolio" class="section portfolio">
+            <div class="container">
+                <h2>Mes réalisations</h2>
                 <div class="gallery">
                     <div class="projet">
                         <img src="miniature1.jpg" alt="Projet 1">
                         <h3>Projet 1</h3>
+                        <p>Description courte du projet 1</p>
                         <video src="video1.mp4" controls></video>
                     </div>
                     <div class="projet">
                         <img src="miniature2.jpg" alt="Projet 2">
                         <h3>Projet 2</h3>
+                        <p>Description courte du projet 2</p>
                         <video src="video2.mp4" controls></video>
                     </div>
                     <div class="projet">
                         <img src="miniature3.jpg" alt="Projet 3">
                         <h3>Projet 3</h3>
+                        <p>Description courte du projet 3</p>
                         <video src="video3.mp4" controls></video>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="services" class="section">
+
+        <!-- Section À propos -->
+        <section id="a-propos" class="section about">
+            <div class="container">
+                <h2>À propos de moi</h2>
+                <p>Je suis un monteur vidéo passionné et expérimenté. J'ai travaillé sur des projets variés allant des clips musicaux aux publicités et courts métrages. Grâce à mon expertise sur des logiciels comme Première Pro et After Effects, je propose des montages de qualité supérieure.</p>
+            </div>
+        </section>
+
+        <!-- Section Logiciels -->
+        <section id="logiciels" class="section logiciels">
+            <div class="container">
+                <h2>Logiciels utilisés</h2>
+                <div class="logos">
+                    <img src="logo-premiere-pro.png" alt="Première Pro">
+                    <img src="logo-after-effects.png" alt="After Effects">
+                    <img src="logo-capcut.png" alt="Capcut Pro">
+                    <img src="logo-canva.png" alt="Canva Pro">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Services -->
+        <section id="services" class="section services">
             <div class="container">
                 <h2>Mes Services</h2>
-                <div class="liste-services">
+                <div class="services-list">
                     <div class="service">
                         <h3>Vente de Canva Pro</h3>
                         <img src="image-canva-pro.jpg" alt="Canva Pro">
-                        <p>Profitez de Canva Pro en l'achetant ici.</p>
-                        <a href="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" target="_blank" class="bouton">Acheter</a>
+                        <p>Accédez aux fonctionnalités Premium de Canva Pro. Achetez directement ici.</p>
+                        <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank" class="paypal-button">
+                            <input type="submit" value="Acheter Canva Pro" />
+                            <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="PayPal" />
+                        </form>
                     </div>
                     <div class="service">
                         <h3>Vente de Capcut Pro</h3>
                         <img src="image-capcut-pro.jpg" alt="Capcut Pro">
-                        <p>Débloquez toutes les fonctionnalités de Capcut Pro.</p>
-                        <a href="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" target="_blank" class="bouton">Acheter</a>
+                        <p>Obtenez toutes les fonctionnalités avancées de Capcut Pro pour des montages vidéos de qualité.</p>
+                        <form action="https://www.paypal.com/ncp/payment/B5JXRGFYCRD6G" method="post" target="_blank" class="paypal-button">
+                            <input type="submit" value="Acheter Capcut Pro" />
+                            <img src="https://www.paypalobjects.com/images/Debit_Credit_APM.svg" alt="PayPal" />
+                        </form>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="avis-clients" class="section">
+
+        <!-- Section Avis Clients -->
+        <section id="avis-clients" class="section reviews">
             <div class="container">
-                <h2>Avis Clients</h2>
-                <div class="liste-avis">
-                    <div class="avis">
+                <h2>Avis clients</h2>
+                <div class="review-list">
+                    <div class="review">
                         <img src="client1.jpg" alt="Client 1">
                         <h3>Madeleine SANOU</h3>
-                        <p>Excellent service ! Très satisfait du résultat.</p>
+                        <p>Excellent service ! Très satisfait du résultat final.</p>
+                        <div class="rating">
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star">★</span>
+                        </div>
                     </div>
-                    <div class="avis">
+                    <div class="review">
                         <img src="client2.jpg" alt="Client 2">
                         <h3>Jean BOUKARY</h3>
-                        <p>Qualité de montage impressionnante, au-delà de mes attentes.</p>
+                        <p>Impressionné par la qualité du montage vidéo. Au-delà de mes attentes !</p>
+                        <div class="rating">
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star active">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <section id="contact" class="section">
+
+        <!-- Section Contact -->
+        <section id="contact" class="section contact">
             <div class="container">
                 <h2>Contactez-moi</h2>
                 <form>
@@ -110,11 +165,14 @@
             </div>
         </section>
     </main>
-    
-    <footer>
+
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 AMEN PROD</p>
+            <p>&copy; 2023 AMEN PROD | Tous droits réservés</p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
