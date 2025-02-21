@@ -386,11 +386,11 @@ nav a {
 }
 
 #contact .coordonnées {
-    text-align: right;
+    text-align: center;
 }
 
 #contact .coordonnées p {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 /* Footer */
