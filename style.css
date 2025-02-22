@@ -14,14 +14,6 @@ body {
 
 .section {
     padding: 40px 0;
-    opacity: 0; /* Initialement invisible pour l'animation au scroll */
-    transform: translateY(50px); /* Décalage initial pour l'animation */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.section.visible {
-    opacity: 1; /* Visible après l'animation */
-    transform: translateY(0); /* Retour à la position normale */
 }
 
 h1, h2 {
@@ -55,11 +47,6 @@ header .container {
 header .logo img {
     max-height: 200px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Animation au survol */
-}
-
-header .logo img:hover {
-    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 header nav ul {
@@ -87,7 +74,6 @@ header nav li {
     height: 3px;
     background-color: #000000;
     margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation pour la croix */
 }
 
 /* Menu de navigation (Général) */
@@ -100,11 +86,6 @@ nav ul {
 nav a {
     color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease; /* Animation de couleur au survol */
-}
-
-nav a:hover {
-    color: #007bff; /* Changement de couleur au survol */
 }
 
 /* Style pour les écrans de téléphone (media query) */
@@ -121,12 +102,10 @@ nav a:hover {
         align-items: center;
         justify-content: center;
         overflow-y: auto; /* Pour ajouter une barre de défilement si le menu est trop long */
-        transition: transform 0.3s ease; /* Animation pour le menu mobile */
     }
 
     nav.active ul {
         display: flex; /* Afficher le menu quand la classe active est présente */
-        transform: translateX(0); /* Animation pour le menu mobile */
     }
 
     nav li {
@@ -158,16 +137,14 @@ nav a:hover {
     }
 }
 
+
+/* ... (Le code CSS que nous avons déjà travaillé) ... */
+
 /* Vidéo d'annonce */
 .video-annonce {
     width: 100%;
     max-height: 500px;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Animation au survol */
-}
-
-.video-annonce:hover {
-    transform: scale(1.02); /* Effet de zoom léger au survol */
 }
 
 /* Section Accueil */
@@ -183,35 +160,11 @@ nav a:hover {
 #accueil h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    animation: fadeInDown 1s ease-out; /* Animation d'apparition */
 }
 
 #accueil h2 {
     font-size: 1.5rem;
     margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out; /* Animation d'apparition */
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .bouton {
@@ -221,12 +174,11 @@ nav a:hover {
     color: #fff;
     border-radius: 5px;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
+    transition: background-color 0.3s ease;
 }
 
 .bouton:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 /* Section Portfolio */
@@ -244,12 +196,11 @@ nav a:hover {
     border: 1px solid #dee2e6;
     padding: 20px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    transition: transform 0.3s ease;
 }
 
 #portfolio .projet:hover {
     transform: scale(1.05);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre au survol */
 }
 
 #portfolio .projet img {
@@ -290,12 +241,14 @@ nav a:hover {
 
 #logiciels .logos-logiciels img {
     max-height: 50px;
-    transition: transform 0.3s ease; /* Animation au survol */
+    transition: transform 0.3s ease;
 }
 
 #logiciels .logos-logiciels img:hover {
-    transform: scale(1.1); /* Effet de zoom au survol */
+    transform: scale(1.1);
 }
+
+/* ... (Le code CSS pour le menu mobile et le header) ... */
 
 /* Section Services */
 #services {
@@ -315,12 +268,11 @@ nav a:hover {
     padding: 20px;
     text-align: center;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+    transition: transform 0.3s ease;
 }
 
 #services .service:hover {
     transform: scale(1.05);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre au survol */
 }
 
 #services .service img {
@@ -345,12 +297,11 @@ nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
+    transition: background-color 0.3s ease;
 }
 
 #services .service input[type="submit"]:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 /* Section Avis Clients */
@@ -427,20 +378,19 @@ nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
+    transition: background-color 0.3s ease;
 }
 
 #contact form button:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 #contact .coordonnées {
-    text-align: center;
+    text-align: right;
 }
 
 #contact .coordonnées p {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* Footer */
