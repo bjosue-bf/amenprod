@@ -1,34 +1,32 @@
 /* Style général */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 20px;
 }
 
 .section {
-    padding: 60px 0;
-    opacity: 0;
-    transform: translateY(50px);
+    padding: 40px 0;
+    opacity: 0; /* Initialement invisible pour l'animation au scroll */
+    transform: translateY(50px); /* Décalage initial pour l'animation */
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .section.visible {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Visible après l'animation */
+    transform: translateY(0); /* Retour à la position normale */
 }
 
-h1, h2, h3 {
-    color: #000;
+h1, h2 {
     text-align: center;
+    color: #333;
 }
 
 a {
@@ -43,14 +41,9 @@ a:hover {
 
 /* Header */
 header {
-    background-color: #000;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #000000;
+    padding: 20px 0;
+    border-bottom: 1px solid #dee2e6;
 }
 
 header .container {
@@ -60,39 +53,29 @@ header .container {
 }
 
 header .logo img {
-    max-height: 80px;
-    transition: transform 0.3s ease;
+    max-height: 200px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Animation au survol */
 }
 
 header .logo img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
-/* Menu de navigation */
-nav ul {
+header nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Pour le menu desktop */
 }
 
-nav ul li {
+header nav li {
     margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #007bff;
 }
 
 /* Menu Hamburger */
 .hamburger {
-    display: none;
+    display: none; /* Masqué par défaut */
     background: none;
     border: none;
     cursor: pointer;
@@ -102,35 +85,76 @@ nav ul li a:hover {
 .bar {
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #000000;
     margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Animation pour la croix */
 }
 
-/* Styles pour le menu mobile */
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
+/* Menu de navigation (Général) */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 60px;
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Animation de couleur au survol */
+}
+
+nav a:hover {
+    color: #007bff; /* Changement de couleur au survol */
+}
+
+/* Style pour les écrans de téléphone (media query) */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Masquer le menu par défaut sur mobile */
+        flex-direction: column; /* Afficher en colonne */
+        position: fixed; /* Position fixe pour le menu mobile */
+        top: 0;
         left: 0;
-        width: 100%;
+        width: 100%; /* Occuper toute la largeur */
+        max-height: 50%; /* Hauteur maximale (ajuster si nécessaire) */
         background-color: #000;
         align-items: center;
-        padding: 20px 0;
+        justify-content: center;
+        overflow-y: auto; /* Pour ajouter une barre de défilement si le menu est trop long */
+        transition: transform 0.3s ease; /* Animation pour le menu mobile */
     }
 
-    nav ul.active {
-        display: flex;
+    nav.active ul {
+        display: flex; /* Afficher le menu quand la classe active est présente */
+        transform: translateX(0); /* Animation pour le menu mobile */
     }
 
-    nav ul li {
-        margin: 10px 0;
+    nav li {
+        margin: 10px 0; /* Marge verticale pour les éléments de la liste */
+    }
+
+    nav a { /* Style des liens dans le menu mobile */
+        font-size: 1.2em; /* Ajuster la taille de la police */
+        padding: 10px; /* Ajuster l'espacement autour du texte */
+    }
+
+    .hamburger {
+        display: block; /* Afficher le bouton hamburger */
+        cursor: pointer; /* Style de curseur au survol */
+        margin-top: 10px; /* Espacement au-dessus du hamburger */
+    }
+
+    /* Style du hamburger actif (croix) */
+    nav.active .hamburger .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    nav.active .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    nav.active .hamburger .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
@@ -139,29 +163,33 @@ nav ul li a:hover {
     width: 100%;
     max-height: 500px;
     object-fit: cover;
-    margin-top: 60px; /* Pour compenser le header fixe */
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.video-annonce:hover {
+    transform: scale(1.02); /* Effet de zoom léger au survol */
 }
 
 /* Section Accueil */
 #accueil {
     background-color: #f8f9fa;
-    padding-top: 100px;
 }
 
 #accueil .contenu-accueil {
     text-align: center;
+    padding: 60px 0;
 }
 
 #accueil h1 {
     font-size: 3rem;
     margin-bottom: 20px;
-    animation: fadeInDown 1s ease-out;
+    animation: fadeInDown 1s ease-out; /* Animation d'apparition */
 }
 
 #accueil h2 {
     font-size: 1.5rem;
     margin-bottom: 40px;
-    animation: fadeInUp 1s ease-out;
+    animation: fadeInUp 1s ease-out; /* Animation d'apparition */
 }
 
 @keyframes fadeInDown {
@@ -193,211 +221,289 @@ nav ul li a:hover {
     color: #fff;
     border-radius: 5px;
     font-size: 1.1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
 }
 
 .bouton:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 /* Section Portfolio */
+#portfolio {
+    background-color: #fff;
+}
+
 #portfolio .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
 }
 
 #portfolio .projet {
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
 }
 
 #portfolio .projet:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre au survol */
 }
 
 #portfolio .projet img {
     max-width: 100%;
-    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
 }
 
-#portfolio .projet h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
+#portfolio .projet video {
+    max-width: 100%;
+    height: auto;
 }
 
-#portfolio .projet p {
-    color: #666;
+#portfolio h3 {
+    margin-top: 10px;
+    color: #333;
 }
 
 /* Section À propos */
 #a-propos {
-    background-color: #fff;
+    background-color: #f8f9fa;
 }
 
 #a-propos p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+    margin-bottom: 20px;
 }
 
 /* Section Logiciels */
+#logiciels {
+    background-color: #fff;
+}
+
 #logiciels .logos-logiciels {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap;
 }
 
 #logiciels .logos-logiciels img {
     max-height: 50px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Animation au survol */
 }
 
 #logiciels .logos-logiciels img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Effet de zoom au survol */
 }
 
 /* Section Services */
+#services {
+    background-color: #f8f9fa;
+}
+
 #services .liste-services {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
 }
 
 #services .service {
-    width: 300px;
-    border: 1px solid #ddd;
+    width: 350px;
+    border: 1px solid #dee2e6;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
 }
 
 #services .service:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Effet d'ombre au survol */
 }
 
 #services .service img {
     max-width: 100%;
-    border-radius: 8px;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 #services .service h3 {
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#services .service form {
+    display: inline-block;
 }
 
 #services .service input[type="submit"] {
     background-color: #007bff;
     color: #fff;
-    border: none;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
 }
 
 #services .service input[type="submit"]:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Effet de zoom au survol */
 }
 
 /* Section Avis Clients */
+#avis-clients {
+    background-color: #fff;
+}
+
 #avis-clients .liste-avis {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Meilleure gestion des colonnes */
     gap: 20px;
+    align-items: start; /* Évite que les avis se superposent */
 }
 
 #avis-clients .avis {
-    border: 1px solid #ddd;
+    border: 1px solid #dee2e6;
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    min-height: 200px; /* Garantit une hauteur uniforme */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Assure un bon espacement du contenu */
 }
 
 #avis-clients .avis:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 #avis-clients .avis img {
-    width: 60px;
+    max-width: 60px;
     height: 60px;
     border-radius: 50%;
-    margin-bottom: 10px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+
+#avis-clients .message-avis {
+    display: block; /* Évite les problèmes d'alignement */
+}
+
+#avis-clients h3 {
+    margin-bottom: 5px;
+    color: #333;
 }
 
 #avis-clients .etoiles {
     color: gold;
-    font-size: 1.2rem;
 }
 
 /* Section Contact */
-#contact form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+#contact {
+    background-color: #f8f9fa;
+}
+
+#contact .contenu-contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 #contact form input,
 #contact form textarea {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
 }
 
 #contact form button {
     background-color: #007bff;
     color: #fff;
-    border: none;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation au survol */
 }
 
 #contact form button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
+    transform: scale(1.05); /* Effet de zoom au survol */
+}
+
+#contact .coordonnées {
+    text-align: center;
+}
+
+#contact .coordonnées p {
+    margin-bottom: 30px;
 }
 
 /* Footer */
 footer {
-    background-color: #000;
+    background-color: #343a40;
     color: #fff;
-    text-align: center;
     padding: 20px 0;
-    margin-top: 40px;
+    text-align: center;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .logo img {
-        max-height: 60px;
+/* Media Queries */
+@media (max-width: 1024px) {
+    /* Tablettes en paysage et petits écrans */
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        display: none; /* Masquer le menu par défaut */
+    }
+
+    header nav li {
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    #accueil .contenu-accueil {
+        padding: 40px 0;
     }
 
     #accueil h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     #accueil h2 {
         font-size: 1.2rem;
     }
 
-    .bouton {
-        font-size: 1rem;
+    #portfolio .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
+
+    #services .service {
+        width: 100%;
+    }
+
+    #contact .contenu-contact {
+        grid-template-columns: 1fr;
+    }
+
+    #contact .coordonnées {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Styles pour les mobiles (déjà inclus dans la réponse précédente) */
+    /* ... */
 }
