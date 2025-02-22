@@ -24,7 +24,8 @@
                     <li><a href="#avis-clients">Clients Avis</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="menu-toggle">  <button class="hamburger">
+                <div class="menu-toggle">
+                    <button class="hamburger">
                         <div class="bar"></div>
                         <div class="bar"></div>
                         <div class="bar"></div>
@@ -33,23 +34,6 @@
             </nav>
         </div>
     </header>
-
-    <script>
-        // Sélection des éléments (plus besoin de déclarations multiples)
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-
-        // Écouteur d'événement pour le bouton hamburger
-        menuToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
-        });
-
-        // Les autres fonctions JavaScript (changerCouleurFond, basculerVisibilite, etc.)
-        // peuvent être ajoutées ici si vous en avez besoin.
-        // ...
-    </script>
-</body>
-</html>
 
     <video class="video-annonce" src="video-annonce.mp4" controls autoplay muted></video>
 
@@ -71,20 +55,20 @@
                 <div class="gallery">
                     <div class="projet">
                         <img src="miniature1.jpg" alt="Projet 1">
-                        <h3>Vidéo anonce d'une soirée de danse</h3>
-                        <p>Ceci est une vidéo d'animation  pour une soirée de fun au 1XL</p>
+                        <h3>Vidéo annonce d'une soirée de danse</h3>
+                        <p>Ceci est une vidéo d'animation pour une soirée de fun au 1XL</p>
                         <video src="video1.mp4" controls></video>
                     </div>
                     <div class="projet">
                         <img src="miniature2.jpg" alt="Projet 2">
-                        <h3>Annoce de jeux concours</h3>
+                        <h3>Annonce de jeux concours</h3>
                         <p>Vidéo pour la promotion d'un jeux Concours de LA POSTE BF</p>
                         <video src="video2.mp4" controls></video>
                     </div>
                     <div class="projet">
                         <img src="miniature3.jpg" alt="Projet 3">
                         <h3>Vidéo de promotion de services</h3>
-                        <p>Le Garage Blessing fait la promotions de ses services à travers cette vidéo</p>
+                        <p>Le Garage Blessing fait la promotion de ses services à travers cette vidéo</p>
                         <video src="video3.mp4" controls></video>
                     </div>
                     <div class="projet">
@@ -96,31 +80,31 @@
                     <div class="projet">
                         <video src="video6.mp4" controls></video>
                     </div>
-                 <div class="projet">
-                       <img src="miniature4.jpg" alt="Projet 4">
-                       <h3>Affiche Publicitaire</h3>
-                     <p>Promotion d'un nouveau produit de Dépôt-Retrait 1XBET.</p>
-                   </div>
-                <div class="projet">
-                       <img src="miniature5.jpg" alt="Projet 5">
-                       <h3>Affiche Publicitaire</h3>
-                     <p>Promotion d'une nouvelle Boutique de téléchargement de FILMS.</p>
-                   </div>
-              <div class="projet">
-                       <img src="miniature6.jpg" alt="Projet 6">
-                       <h3>Affiche Publicitaire</h3>
-                     <p>Promotion d'une boutique pour FILMS.</p>
-                   </div>
-             <div class="projet">
-                       <img src="miniature7.jpg" alt="Projet 7">
-                       <h3>LOGO entreprise</h3>
-                     <p>Création d'un logo pour un Fast Food nommé Café Eclair.</p>
-                   </div>
-           <div class="projet">
-                       <img src="miniature8.jpg" alt="Projet 8">
-                       <h3>LOGO de marque</h3>
-                     <p>Logo de marque pour une entreprise de montage vidéo.</p>
-                   </div>
+                    <div class="projet">
+                        <img src="miniature4.jpg" alt="Projet 4">
+                        <h3>Affiche Publicitaire</h3>
+                        <p>Promotion d'un nouveau produit de Dépôt-Retrait 1XBET.</p>
+                    </div>
+                    <div class="projet">
+                        <img src="miniature5.jpg" alt="Projet 5">
+                        <h3>Affiche Publicitaire</h3>
+                        <p>Promotion d'une nouvelle Boutique de téléchargement de FILMS.</p>
+                    </div>
+                    <div class="projet">
+                        <img src="miniature6.jpg" alt="Projet 6">
+                        <h3>Affiche Publicitaire</h3>
+                        <p>Promotion d'une boutique pour FILMS.</p>
+                    </div>
+                    <div class="projet">
+                        <img src="miniature7.jpg" alt="Projet 7">
+                        <h3>LOGO entreprise</h3>
+                        <p>Création d'un logo pour un Fast Food nommé Café Eclair.</p>
+                    </div>
+                    <div class="projet">
+                        <img src="miniature8.jpg" alt="Projet 8">
+                        <h3>LOGO de marque</h3>
+                        <p>Logo de marque pour une entreprise de montage vidéo.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -221,11 +205,12 @@
                         <div class="message-avis">
                             <p>Très satisfait de la prestation, le montage est très pro et respecte mes attentes</p>
                             <div class="etoiles">
-                            <span class="etoile active">★</span>
-                            <span class="etoile active">★</span>
-                            <span class="etoile active">★</span>
-                            <span class="etoile">★</span>
-                            <span class="etoile">★</span>
+                                <span class="etoile active">★</span>
+                                <span class="etoile active">★</span>
+                                <span class="etoile active">★</span>
+                                <span class="etoile">★</span>
+                                <span class="etoile">★</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,6 +242,40 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Fonction pour gérer le défilement fluide
+        function faireDefilerVersSection(id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        // Ajouter des écouteurs d'événements aux liens du menu
+        document.querySelectorAll('nav a').forEach(lien => {
+            lien.addEventListener('click', (event) => {
+                event.preventDefault(); // Empêcher le comportement par défaut du lien
+                const cible = lien.getAttribute('href').substring(1); // Récupérer l'ID de la section
+                faireDefilerVersSection(cible);
+
+                // Fermer le menu mobile après avoir cliqué sur un lien
+                if (window.innerWidth <= 768) {
+                    const nav = document.querySelector('nav');
+                    const hamburger = document.querySelector('.hamburger');
+                    nav.classList.remove('active');
+                    hamburger.classList.remove('open');
+                }
+            });
+        });
+
+        // Gestion du menu hamburger
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
