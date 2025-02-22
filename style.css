@@ -96,7 +96,7 @@ nav a {
         position: fixed; /* Position fixe pour le menu mobile */
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100%; /* Occuper toute la largeur */
         max-height: 50%; /* Hauteur maximale (ajuster si nécessaire) */
         background-color: #000;
         align-items: center;
@@ -136,6 +136,9 @@ nav a {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 }
+
+
+/* ... (Le code CSS que nous avons déjà travaillé) ... */
 
 /* Vidéo d'annonce */
 .video-annonce {
@@ -245,6 +248,8 @@ nav a {
     transform: scale(1.1);
 }
 
+/* ... (Le code CSS pour le menu mobile et le header) ... */
+
 /* Section Services */
 #services {
     background-color: #f8f9fa;
@@ -292,7 +297,8 @@ nav a {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    /* ... (Le code CSS précédent) ... */
+    transition: background-color 0.3s ease;
+}
 
 #services .service input[type="submit"]:hover {
     background-color: #0056b3;
