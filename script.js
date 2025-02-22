@@ -1,27 +1,22 @@
-// Fonction pour gérer le défilement fluide
-function faireDefilerVersSection(id) {
-    const section = document.getElementById(id);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-}
+// Fonction pour afficher les sections au défilement
+function afficherSectionsAuDefilement() {
+    const sections = document.querySelectorAll('.section');
+    const windowHeight = window.innerHeight;
 
-// Ajouter des écouteurs d'événements aux liens du menu
-document.querySelectorAll('nav a').forEach(lien => {
-    lien.addEventListener('click', (event) => {
-        event.preventDefault(); // Empêcher le comportement par défaut du lien
-        const cible = lien.getAttribute('href').substring(1); // Récupérer l'ID de la section
-        faireDefilerVersSection(cible);
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
 
-        // Fermer le menu mobile après avoir cliqué sur un lien
-        if (window.innerWidth <= 768) {
-            const nav = document.querySelector('nav');
-            const hamburger = document.querySelector('.hamburger');
-            nav.classList.remove('active');
-            hamburger.classList.remove('open');
+        if (sectionTop < windowHeight * 0.8 && sectionTop > -section.offsetHeight) {
+            section.classList.add('visible');
         }
     });
-});
+}
+
+// Écouteur d'événement pour le défilement
+window.addEventListener('scroll', afficherSectionsAuDefilement);
+
+// Appliquer l'affichage des sections au chargement de la page
+document.addEventListener('DOMContentLoaded', afficherSectionsAuDefilement);
 
 // Gestion du menu hamburger
 const menuToggle = document.querySelector('.menu-toggle');
@@ -32,22 +27,12 @@ menuToggle.addEventListener('click', () => {
     menuToggle.classList.toggle('open');
 });
 
-// Fonction pour afficher les sections au défilement
-function afficherSectionsAuDefilement() {
-    const sections = document.querySelectorAll('.section');
-    const windowHeight = window.innerHeight;
-
-    sections.forEach(section => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop < windowHeight * 0.8) {
-            section.classList.add('visible');
+// Fermer le menu mobile après avoir cliqué sur un lien
+document.querySelectorAll('nav a').forEach(lien => {
+    lien.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('open');
         }
     });
-}
-
-// Écouteur d'événement pour le défilement
-window.addEventListener('scroll', afficherSectionsAuDefilement);
-
-// Appliquer l'affichage des sections au chargement de la page
-window.addEventListener('load', afficherSectionsAuDefilement);
+});
